@@ -4,7 +4,7 @@ module HoganAssets
       next unless app.assets
       HoganAssets::Config.load_yml! if HoganAssets::Config.yml_exists?
       HoganAssets::Config.template_extensions.each do |ext|
-        app.assets.register_engine(".#{ext}", Tilt)
+        app.assets.register_engine(".#{ext}", Tilt, silence_deprecation: true)
       end
     end
   end
