@@ -5,7 +5,7 @@ module HoganAssets
       Rails.application.config.assets.configure do |env|
         HoganAssets::Config.template_extensions.each do |ext|
 
-          mime_type = 'application/javascript'
+          mime_type = 'text/mustache'
           extension = ".#{ext}"
 
           if env.respond_to?(:register_transformer)
